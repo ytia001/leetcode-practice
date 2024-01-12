@@ -1,0 +1,93 @@
+#include "SortArrayIncreaseFreq.hpp"
+
+// std::vector<int> Solution::frequencySort(std::vector<int>& nums){
+
+// };
+
+
+std::vector<int> sortByFreq(std::vector<int>& nums){
+  std::map<int,int> intToCount; 
+  if(nums.empty()) return {}; // return an empty vector if nums is empty
+  std::sort(nums.begin(),nums.end());
+  for (int i:nums){
+    intToCount[i]++;
+  }
+  //std::cout<<"aad"<<std::endl;
+  // for (const auto& element : intToCount) {
+  //      std::cout << "Key: " << element.first << ", Value: " << element.second << std::endl;
+  // }
+  return nums;
+}
+
+int main(){
+   std::vector<int> test = {-1,1,-6,4,5,-6,1,4,1};
+   Solution s1;
+   std::vector<int> result = s1.sortByFreq(test);
+  return 0;
+}
+
+// std::vector<int> sortByAsc(std::vector<int>& nums){ //uses insertion sort
+  
+//   for (int i = 1; i < nums.size();  i++){
+//     int key = nums[i];
+//     int j = i -1;
+//     while ( j>=0 && nums[j]>key){
+//       nums[j+1] = nums[j];
+//       j--;
+//     }
+//     nums[j+1] = key;
+//   }
+
+//   return nums;
+// };
+
+// std::vector<int> sortByFreq(std::vector<int>& nums){  
+//     std::vector<std::vector<int>> copy;
+//     int startIndex = 0;
+//     for ( int i = 1 ; i < nums.size() ; i++){
+//       if (nums[i] == nums[i-1]){
+//         continue;
+//       }else{
+//         std::vector<int> dummy(nums.begin()+startIndex,nums.begin()+i);
+//         copy.push_back(dummy);
+//         startIndex = i;
+//       }
+//     }
+
+//     for (int i = 1; i < copy.size();  i++){
+//       int key = copy[i].size();
+//       std::vector<int> keyVect = copy[i];
+
+//       int j = i -1;
+//       while ( j>=0 && copy[j].size()>key){
+//         copy[j+1] = copy[j];
+//         j--;
+//       }
+//       copy[j+1] = keyVect;
+//     }
+    
+//     return nums;
+// }
+
+// std::unordered_map<int,std::vector<int>> countToElem ;
+  // std::vector<int> value = {nums[0]};
+  // int freq = 1;
+  // for ( int i = 1 ; i < nums.size() ; i++){
+  //   if (nums[i] == nums[i-1]){
+  //     value.push_back(nums[i]);
+  //     freq++;
+  //   }else{
+  //     countToElem.insert({freq,value});
+  //     value.empty();
+  //     value.push_back(i);
+  //     freq = 1;
+  //   }
+  // }
+  // for (const auto& element : countToElem) {
+  //       std::cout << "Key: " << countToElem.first << ", Value: " << countToElem.second << std::endl;
+  //  }
+
+
+
+
+
